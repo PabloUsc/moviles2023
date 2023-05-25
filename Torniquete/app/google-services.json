@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "430601273645",
+    "firebase_url": "https://ionicfirebase-81efc-default-rtdb.firebaseio.com",
+    "project_id": "ionicfirebase-81efc",
+    "storage_bucket": "ionicfirebase-81efc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430601273645:android:73e09b8ffbec61eaa5d3a4",
+        "android_client_info": {
+          "package_name": "com.example.torniquete"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430601273645-q6gr8dmuujq7is5q9gdu9vdcq2uivqvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2er1jtApUCEQRUxWXx14R7AZPuKi44oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430601273645-q6gr8dmuujq7is5q9gdu9vdcq2uivqvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
