@@ -2,18 +2,26 @@ package com.example.torniquete
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import com.example.torniquete.databinding.ActivityLeerqrBinding
 import com.google.zxing.integration.android.IntentIntegrator
 
 class LeerQR  : AppCompatActivity() {
 
+    private lateinit var binding: ActivityLeerqrBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_leerqr)
+        //setContentView(R.layout.activity_leerqr)
+        binding = ActivityLeerqrBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.scanQRbtn.setOnClickListener {
+            leerCodigo()
+            //Toast.makeText(this,"Sirve botón", Toast.LENGTH_SHORT).show()
+        }
     }
 
+    //*
     private fun leerCodigo()
     {
         val integrator = IntentIntegrator(this)
@@ -22,6 +30,7 @@ class LeerQR  : AppCompatActivity() {
         integrator.setTimeout(15000)
         integrator.initiateScan()
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
     {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
@@ -31,8 +40,8 @@ class LeerQR  : AppCompatActivity() {
             {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_LONG).show()
             }
-            //else { binding.leecturaQr.text=result.contents.toString() }
+            else { binding.resultQR.text=result.contents.toString() }
         }
         else { super.onActivityResult(requestCode, resultCode, data) }
-    }
+    }//*/
 }
