@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Login exitoso", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this,LeerQR::class.java))
+                } else {
+                    Toast.makeText(this, "Credenciales erróneas", Toast.LENGTH_LONG).show()
                 }
             }
         }

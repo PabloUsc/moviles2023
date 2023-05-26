@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import com.example.torniquete.databinding.ActivityLeerqrBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
@@ -23,12 +24,17 @@ class LeerQR  : AppCompatActivity() {
     val myRef = database.getReference("claves")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_leerqr)
+
+        auth = Firebase.auth;
+
         binding = ActivityLeerqrBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.scanQRbtn.setOnClickListener {
             leerCodigo()
             //Toast.makeText(this,"Sirve botón", Toast.LENGTH_SHORT).show()
+        }
+        binding.logoutBtn.setOnClickListener {
+            logOut()
         }
     }
 
@@ -59,7 +65,7 @@ class LeerQR  : AppCompatActivity() {
                     Toast.makeText(this, res, Toast.LENGTH_LONG).show()
                     if (res == "Generado") {
                         myRef.child(result.contents.toString()).child("status").setValue("Utilizado")
-                        binding.resultQR.text = "¡Qué tenga un buen viaje!"
+                        binding.resultQR.text = "¡Que tenga un buen viaje!"
                         Timer().schedule(6000) {
                             binding.resultQR.text = ""
                         }
