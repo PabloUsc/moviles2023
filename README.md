@@ -1,4 +1,2 @@
-# moviles2023
-Clase desarrollo móvil
-primer commit Pablo
-segundo commit Pablo
+# Moviles
+Proyecto de la clase de Desarrollo Móvil. Aplicación desarrollada en Vue
